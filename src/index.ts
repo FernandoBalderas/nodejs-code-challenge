@@ -10,8 +10,11 @@ const app = express();
 app.use(express.json());
 app.use(morgan("short"));
 app.use("/", mainRouter);
-app.listen(process.env.PORT, () => {
+
+const PORT = process.env.PORT || 8000;
+
+app.listen(PORT, () => {
   if (process.env.NODE_ENV == "development") {
-    console.log(`Listening on http://localhost:${process.env.PORT}/`);
+    console.log(`Listening on http://localhost:${PORT}/`);
   }
 });
