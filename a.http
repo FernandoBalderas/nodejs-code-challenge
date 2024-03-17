@@ -1,0 +1,28 @@
+GET http://localhost:8000/api/pokemon/captured
+Content-Type: application/json
+
+{
+  "id": 1
+}
+
+###
+
+POST http://localhost:8000/api/pokemon/captured
+Content-Type: application/json
+
+{
+  "name": "CHARmeleon"
+}
+
+###
+
+POST http://localhost:8000/register
+Content-Type: application/json
+
+{
+  "username": "Edwin",
+  "password" : "edwin"
+}
+
+###
+POST http://localhost:8000/
