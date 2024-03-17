@@ -41,10 +41,10 @@ Construye la imagen según el dockerfile y ejecuta con variables de ambiente
 
 ```
   docker run -d \
-  --name [container name] \
+  --name pokeapi \
   -p 8000:8000 \
   -e PORT=8000 \
   -e SECRET_KEY='string' \
   -e POKEMON_API_URL='https://pokeapi.co/api/v2' \
-  dab303790c3b
+  [image id]
 ```
