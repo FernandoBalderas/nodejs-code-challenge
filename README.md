@@ -17,13 +17,16 @@ Por cuestiones de tiempo no implementé un sistema mas robusto de logging ni err
 ## Uso de la API
 
 POST `/register` -> Envia un objeto json con usuario y contraseña para registrar tu usuario y recibir tu JWT de auth
+
 POST `/login` -> Envia un objeto json con usuario y contraseña previamente registerado y recibe tu JWT de auth
 
-**Rutas protegidas**
+## Rutas protegidas
 GET `/api/pokemon/captured` -> Recibe la lista de pokemons capturados por un usuario según su JWT
+
 POST `/api/pokemon/captured` -> Envia un objeto json con propiedades `id` o `name` para agregar un pokemon a la colección de un usuario según su JWT. `name` es case-insensitive
 
 GET `/api/pokemon/favorite` -> Recibe la lista de pokemons favoritos por un usuario según su JWT
+
 POST `/api/pokemon/favorite` -> Envia un objeto json con propiedades `id` o `name` para marcar un pokemon como favorito previamente capturado de un usuario según su JWT. `name` es case-insensitive
 
 ## Setup del proyecto
@@ -35,6 +38,7 @@ POST `/api/pokemon/favorite` -> Envia un objeto json con propiedades `id` o `nam
 
 ### Correr en docker
 Construye la imagen según el dockerfile y ejecuta con variables de ambiente
+
 ```
   docker run -d \
   --name [container name] \
