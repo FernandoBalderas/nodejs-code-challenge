@@ -14,6 +14,18 @@ const register: RequestHandler = async (req, res) => {
         .send("Bad Request. Username or password not provided");
     }
 
+    const alreadyExists = await db.user.findFirst({
+      where: {
+        username,
+      },
+    });
+
+    if (alreadyExists) {
+      return res
+        .status(400)
+        .send("Username already exists. Please try another");
+    }
+
     const hash = await bcrypt.hash(password, 2);
 
     const created = await db.user.create({
